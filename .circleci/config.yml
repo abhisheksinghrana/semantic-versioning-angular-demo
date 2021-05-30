@@ -12,8 +12,11 @@ jobs:
           name: build
           command: npm run build
       - run:
-          name: create package
-          command: cd dist/my-lib && npm pack
-      - run:
-          name: publish package
-          command: cd projects/my-lib && npm publish --registry http://localhost:4873
+          name: test
+          command: npm run test
+      - name: Release
+        if: github.repository == 'abhisheksinghrana/semantic-versioning-angular-demo' && github.ref == 'refs/heads/main'
+        run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
