@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: install
-          command: npm install
+          command: npm install --only=prod
       - run:
           name: release
           command: npm run semantic-release || true
