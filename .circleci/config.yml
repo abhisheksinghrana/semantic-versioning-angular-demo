@@ -1,14 +1,17 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/projects/my-lib
     docker:
       - image: 'circleci/node:latest'
     steps:
       - checkout
+      - run: 
       - run:
           name: install
-          command: npm install --only=prod
+          command: cd /projects/my-lib && npm install
       - run:
-          name: release
-          command: npm run semantic-release || true
+          name: build
+          command: cd /projects/my-lib && npm build
+      - run:
+          name: create package
+          command: cd /dist/my-lib && npm pack
