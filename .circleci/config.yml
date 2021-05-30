@@ -1,7 +1,7 @@
 version: 2
 jobs:
   build:
-    working_directory: ../projects/my-lib
+    working_directory: ~/projects/my-lib
     docker:
       - image: 'circleci/node:latest'
     steps:
