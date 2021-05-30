@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: install
-          command: pwd && cd projects/my-lib && npm install
+          command: pwd && npm install
       - run:
           name: build
           command: pwd && npm run build
