@@ -15,8 +15,8 @@ jobs:
           name: test
           command: npm run test
       - name: Release
-        if: github.repository == 'abhisheksinghrana/semantic-versioning-angular-demo' && github.ref == 'refs/heads/main'
-        run: npx semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          if: github.repository == 'abhisheksinghrana/semantic-versioning-angular-demo' && github.ref == 'refs/heads/main'
+          run: npx semantic-release
+          env:
+            GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+            NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
