@@ -7,10 +7,13 @@ jobs:
       - checkout
       - run:
           name: install
-          command: pwd && npm install
+          command: npm install
       - run:
           name: build
-          command: pwd && npm run build
+          command: npm run build
       - run:
           name: create package
-          command: pwd && cd dist/my-lib && npm pack
+          command: cd dist/my-lib && npm pack
+      - run:
+          name: publish package
+          command: cd projects/my-lib && npm publish --registry http://localhost:4873
