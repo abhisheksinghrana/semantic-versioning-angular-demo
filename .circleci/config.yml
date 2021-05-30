@@ -7,10 +7,10 @@ jobs:
       - checkout
       - run:
           name: install
-          command: cd ~/../projects/my-lib && npm install
+          command: cd ../projects/my-lib && npm install
       - run:
           name: build
-          command: cd ~/../projects/my-lib && npm build
+          command: cd ../projects/my-lib && npm build
       - run:
           name: create package
-          command: cd ~/../dist/my-lib && npm pack
+          command: cd ../dist/my-lib && npm pack
