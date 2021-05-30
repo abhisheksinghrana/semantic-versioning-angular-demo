@@ -10,7 +10,7 @@ jobs:
           command: pwd && cd projects/my-lib && npm install
       - run:
           name: build
-          command: pwd && cd projects/my-lib && npm build
+          command: pwd && npm run build
       - run:
           name: create package
           command: pwd && cd dist/my-lib && npm pack
